@@ -36,4 +36,14 @@ public class HealthComponet : MonoBehaviour
             onHealthEmpty?.Invoke(amt, maxHealth);
         }
     }
+
+    public float GetHealth() { return currentHealth; }
+    public float GetMaxHealth() { return maxHealth; }
+
+
+    internal bool IsFull()
+    {
+        return currentHealth == maxHealth;
+    }
+
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AbilityComponent : MonoBehaviour
@@ -12,7 +13,10 @@ public class AbilityComponent : MonoBehaviour
     List<Ability> abilities = new List<Ability>();
 
     public event Action<Ability> onNewAbilityAdded;
-    public event Action<float, float> onStaminaChnaged;
+    public event Action<float, float> onStaminaChanged;
+
+    public float GetStamina() { return stamina; }
+    public float GetMaxStamina() { return maxStamina; }
 
     private void Start()
     {
@@ -35,10 +39,21 @@ public class AbilityComponent : MonoBehaviour
         if(stamina >= staminaCost)
         {
             stamina -= staminaCost;
-            onStaminaChnaged?.Invoke(stamina, maxStamina);
+            onStaminaChanged?.Invoke(stamina, maxStamina);
             return true;
         }
 
         return false;
+    }
+
+    internal void TryActivateAbility(Ability abilityToCast)
+    {
+        foreach (Ability ability in abilities)
+        {
+            if (ability.GetType() == abilityToCast.GetType())
+            {
+                ability.ActivateAbility();
+            }
+        }
     }
 }
