@@ -13,7 +13,7 @@ public class PlayerCharacter : MonoBehaviour, ITeamInterface, IMovementInterface
     [SerializeField] CameraRig cameraRig;
     [SerializeField] int teamID = 1;
     [SerializeField] UIManager uiManager;
-
+    
     CharacterController characterController;
     InventoryComponent inventoryComponent;
     MovementComponent movementComponent;
@@ -52,6 +52,8 @@ public class PlayerCharacter : MonoBehaviour, ITeamInterface, IMovementInterface
         movementComponent = GetComponent<MovementComponent>();
         healthComponet = GetComponent<HealthComponet>();
         healthComponet.onHealthEmpty += StartDeath;
+
+
     }
 
     private void StartDeath(float delta, float maxHealth)

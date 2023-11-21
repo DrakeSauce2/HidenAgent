@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db35c093aee7904fb09500385c6fb56, type: 3}
+  m_Name: Fire
+  m_EditorClassIdentifier: 
+  title: Fire
+  price: 50
+  icon: {fileID: 21300000, guid: 155f81af2e24dd84e8842987ef4016a2, type: 3}
+  item: {fileID: 11400000, guid: 0947c29063d560d439990d07474e4986, type: 2}
+  description: It is Fire and it uses up some substantial stamina
